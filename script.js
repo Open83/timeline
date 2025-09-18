@@ -239,7 +239,8 @@ function createHeart() {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 2000);
 }
-setInterval(createHeart, 1000);
+setInterval(createHeart, 100);
+
 
 
 
