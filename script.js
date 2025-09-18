@@ -55,7 +55,7 @@ Lekin jaise har kahani mein twist hota hai, waisa yahan bhi hua. Ek baat, ek zid
 
 Phir hum chale apne kamre ki taraf. Socha tha sirf shanti milegi, par hum dono ke beech ek aur takraar ne uss sukoon ko tod diya. Lekin uske baad jo hua… woh sirf ek milan nahi tha. Woh ek maafi thi, ek izhaar tha, ek wada tha.
 
-Jab tum meri baahon mein thi aur humari saansen ek hi rhythm mein chal rahi thi, usmein sirf desire nahi tha. Usmein woh dard bhi tha jo humne ek dusre ko diya, aur woh healing bhi thi jo sirf hum ek dusre ko de sakte hain. Aaj ka sex sirf jism ka nahi tha, woh rooh ka tha raw, bold, aur saccha. Har touch, har kiss, har thrust — jaise hum keh rahe ho ek dusre se: “Main tujhmein hoon aur tu mujh mein.”
+Jab tum meri baahon mein thi aur humari saansen ek hi rhythm mein chal rahi thi, usmein sirf desire nahi tha. Usmein woh dard bhi tha jo humne ek dusre ko diya, aur woh healing bhi thi jo sirf hum ek dusre ko de sakte hain. Aaj ka sex sirf jism ka nahi tha, woh rooh ka tha raw, bold, aur saccha. Har touch, har kiss, har thrust jaise hum keh rahe ho ek dusre se: “Main tujhmein hoon aur tu mujh mein.”
 
 Naye condom aur lubricant ne pal ko smooth banaya hoga, lekin jo wildness humne dikhayi, woh humari sachchai thi. Humari ladai, humara pyaar, humari junooniyat sab ek hi bed par khul kar samne aa gaye.
 
@@ -240,6 +240,7 @@ function createHeart() {
   setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 1000);
+
 
 
 
