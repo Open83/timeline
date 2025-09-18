@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Input Section -->
+  <div id="input-section" class="input-section">
+    <h1>💖 Our Memories</h1>
+    <div class="input-box">
+      <input type="text" id="dateInput" placeholder="DD-MM-YYYY">
+      <button id="viewBtn" class="btn">View</button>
+    </div>
+    <p id="errorMsg" class="error-msg"></p>
+  </div>
+
+  <!-- Memory Section -->
+  <div id="memory-section" class="memory-section hidden">
+    <div class="memory-card">
+      <div class="memory-icon" id="memoryIcon"></div>
+      <div class="memory-text" id="memoryText"></div>
+      <div class="memory-buttons">
+        <button id="galleryBtn" class="btn">View Images</button>
+        <button id="backBtn" class="btn secondary">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <button class="arrow left">&#10094;</button>
+      <img id="galleryImage" src="" alt="Memory Image" class="fade-img">
+      <button class="arrow right">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Background Sparkles + Hearts -->
+  <canvas id="sparkles"></canvas>
+  <div id="hearts"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
