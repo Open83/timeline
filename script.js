@@ -136,7 +136,7 @@ Mujhe pata hai humne kitne sad moments jeele hain, kabhi tum royi, kabhi main ro
 Tum meri dua bhi ho, meri junooniyat bhi, meri ladai bhi aur mera sukoon bhi. Tum meri duniya ka sabse khoobsurat chapter ho jo main apni aakhri saans tak likhta rahunga.
 
 From strangers → to friends → to lovers → to life partners.
-Yeh journey adhuri nahi, meri jaan, yeh abhi bas shuru hui hai.`,
+Yeh journey adhuri nahi, meri jaan, yeh abhi bas shuru hui hai. I Lykkeeeeeeeeeeeeeeeeeeeeeeeeeeeee Uuuuuuuhhhhhhhhhhhhhhhhhhhhhhhh Meri Pyriiiii Si Saraaaaaaa♥️💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋💋`,
     images: [
       "images/img2.jpeg"
     ]
@@ -240,3 +240,4 @@ function createHeart() {
   setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 1000);
+
