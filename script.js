@@ -237,9 +237,10 @@ function createHeart() {
   heart.style.left = Math.random() * window.innerWidth + "px";
   heart.style.fontSize = Math.random() * 20 + 15 + "px";
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 2000);
+  setTimeout(() => heart.remove(), 6000);
 }
-setInterval(createHeart, 6000);
+setInterval(createHeart, 1000);
+
 
 
 
