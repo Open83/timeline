@@ -187,7 +187,7 @@ viewBtn.addEventListener("click", () => {
       setTimeout(() => memorySection.classList.add("active"), 50);
     }, 500);
   } else {
-    errorMsg.textContent = "❌ Uufff uuhhhh missed a date!";
+    errorMsg.textContent = "Oof. That date didn’t ring any bells. Are you even my soulmate?! 😤🔔";
   }
 });
 
@@ -240,4 +240,5 @@ function createHeart() {
   setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 1000);
+
 
