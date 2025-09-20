@@ -16,17 +16,8 @@ const closeBtn = document.querySelector(".close-btn");
 const leftArrow = document.querySelector(".arrow.left");
 const rightArrow = document.querySelector(".arrow.right");
 
-// 🎯 Memory sequence
-const memorySequence = [
-  "29-08-2023", // First Meet-up
-  "23-01-2025", // Ajmer
-  "18-03-2025", // Iftar
-  "31-03-2025", // Eid
-  "22-06-2025", // Snow World
-  "03-08-2025"  // Manori
-];
+const heartsContainer = document.getElementById("hearts");
 
-// Memory data (unchanged)
 // 🎯 6 Dummy Memories
 const memories = {
   "31-03-2025": {
@@ -182,51 +173,24 @@ Meri Jaan ♥️, main tumhe hamesha isi shiddat, isi izzat aur isi junoon ke sa
 let currentImages = [];
 let currentIndex = 0;
 
-// Get last viewed memory index from localStorage
-let lastViewedIndex = localStorage.getItem("lastViewedIndex");
-if(lastViewedIndex !== null){
-  lastViewedIndex = parseInt(lastViewedIndex);
-} else {
-  lastViewedIndex = -1; // first-time user
-}
-
 // View button
 viewBtn.addEventListener("click", () => {
   const date = dateInput.value.trim();
-  const sequenceIndex = memorySequence.indexOf(date);
-
-  if(sequenceIndex === -1){
-    errorMsg.textContent = "No memory found for this date!";
-    return;
+  if(memories[date]){
+    errorMsg.textContent = "";
+    inputSection.style.opacity = "0";
+    setTimeout(()=>{
+      inputSection.classList.add("hidden");
+      memoryIcon.textContent = memories[date].icon;
+      memoryText.textContent = memories[date].text;
+      currentImages = memories[date].images;
+      currentIndex = 0;
+      memorySection.classList.remove("hidden");
+      setTimeout(()=> memorySection.classList.add("active"),50);
+    },500);
+  } else {
+    errorMsg.textContent = "You missed the date... again. Do you even love me, or was it all a lie?! 😤🎭";
   }
-
-  // First-time user must start with first memory
-  if(lastViewedIndex === -1 && sequenceIndex !== 0){
-    errorMsg.textContent = "Please start with the first memory! 🕒";
-    return;
-  }
-
-  // Check sequential viewing
-  if(sequenceIndex !== lastViewedIndex + 1){
-    errorMsg.textContent = "Please view memories in sequence! 🕒";
-    return;
-  }
-
-  // Valid sequence
-  errorMsg.textContent = "";
-  lastViewedIndex = sequenceIndex;
-  localStorage.setItem("lastViewedIndex", lastViewedIndex);
-
-  inputSection.style.opacity = "0";
-  setTimeout(()=>{
-    inputSection.classList.add("hidden");
-    memoryIcon.textContent = memories[date].icon;
-    memoryText.textContent = memories[date].text;
-    currentImages = memories[date].images;
-    currentIndex = 0;
-    memorySection.classList.remove("hidden");
-    setTimeout(()=> memorySection.classList.add("active"),50);
-  },500);
 });
 
 // Back button
@@ -278,4 +242,3 @@ function createHeart(){
   setTimeout(()=> heart.remove(),6000);
 }
 setInterval(createHeart,2000);
-
