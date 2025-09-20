@@ -16,6 +16,8 @@ const closeBtn = document.querySelector(".close-btn");
 const leftArrow = document.querySelector(".arrow.left");
 const rightArrow = document.querySelector(".arrow.right");
 
+const heartsContainer = document.getElementById("hearts-container");
+
 // Dummy Memories
 const memories = {
   "31-03-2025": { icon: "Eid-Ul-Fitr🌹💖", text: "Your Eid message here...", images:["images/img11.jpeg","images/img12.jpeg","images/img13.jpeg"] },
@@ -75,3 +77,14 @@ function showImage(index){
     galleryImage.classList.add("fade-in");
   },200);
 }
+
+// Hearts animation
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = 12 + Math.random()*18 + "px";
+  heartsContainer.appendChild(heart);
+  setTimeout(()=> heart.remove(),6000);
+}
+setInterval(createHeart, 500);
