@@ -60,43 +60,49 @@ body {
 .secondary { background: #607d8b; }
 .secondary:hover { background: #546e7a; }
 
-/* Memory Section */
-.memory-section {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.6s ease;
-  z-index: 2;
-}
-.memory-section.active {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: all;
-}
+//* Memory Section */
 .memory-card {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(12px);
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 500px;
+  padding: 25px 30px; /* increased padding */
+  border-radius: 20px; /* slightly bigger radius */
+  max-width: 550px;
   width: 90%;
   max-height: 80vh;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   text-align: center;
-  overflow-y: auto;
+  overflow: hidden; /* hide overflow outside card */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.memory-icon { font-size: 2rem; margin-bottom: 15px; }
+
+/* Memory text */
 .memory-text {
-  max-height: 200px;
+  max-height: 60vh; /* more space */
   overflow-y: auto;
   text-align: left;
-  padding: 10px;
-  line-height: 1.6;
-  font-size: 1rem;
+  padding: 15px 12px; /* extra padding */
+  line-height: 1.8; /* more spacing between lines */
+  font-size: 1.05rem; /* slightly bigger text */
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,64,129,0.6) transparent;
 }
+
+/* Optional: scrollbar styling for Chrome */
+.memory-text::-webkit-scrollbar {
+  width: 8px;
+}
+.memory-text::-webkit-scrollbar-thumb {
+  background-color: rgba(255,64,129,0.6);
+  border-radius: 4px;
+}
+.memory-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 
 /* Gallery Modal */
 .modal {
@@ -193,3 +199,4 @@ body {
   .arrow.left { left: -15px; }
   .arrow.right { right: -15px; }
 }
+
