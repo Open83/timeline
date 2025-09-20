@@ -189,7 +189,7 @@ viewBtn.addEventListener("click", () => {
       setTimeout(()=> memorySection.classList.add("active"),50);
     },500);
   } else {
-    errorMsg.textContent = "You missed the date... 😤🎭";
+    errorMsg.textContent = "You missed the date... again. Do you even love me, or was it all a lie?! 😤🎭";
   }
 });
 
@@ -242,4 +242,5 @@ function createHeart(){
   setTimeout(()=> heart.remove(),6000);
 }
 setInterval(createHeart,2000);
+
 
