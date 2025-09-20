@@ -64,36 +64,36 @@ body {
 .memory-card {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(12px);
-  padding: 30px 25px; /* more padding */
-  border-radius: 20px;
-  max-width: 600px;  /* wider for larger screens */
-  width: 95%;        /* responsive width */
-  max-height: 85vh;  /* more height */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  padding: 22px 20px; /* medium padding */
+  border-radius: 18px;
+  max-width: 520px;   /* medium width for desktop */
+  width: 90%;         /* responsive width */
+  max-height: 80vh;   /* medium height */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 /* Memory text */
 .memory-text {
-  max-height: 65vh; /* more vertical space */
+  max-height: 55vh;   /* medium height */
   overflow-y: auto;
   text-align: left;
-  padding: 18px 15px; /* more padding inside text box */
-  line-height: 1.9;   /* better readability */
-  font-size: 1.1rem;  /* slightly larger text */
+  padding: 14px 12px; /* medium padding */
+  line-height: 1.7;   /* comfortable reading */
+  font-size: 1rem;    /* readable text size */
   background: rgba(255,255,255,0.18);
-  border-radius: 15px;
+  border-radius: 12px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255,64,129,0.6) transparent;
 }
 
 /* Scrollbar for Chrome/Edge/Safari */
 .memory-text::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 .memory-text::-webkit-scrollbar-thumb {
   background-color: rgba(255,64,129,0.6);
@@ -106,16 +106,17 @@ body {
 /* Mobile adjustments */
 @media screen and (max-width: 480px) {
   .memory-card {
-    padding: 20px 15px;
-    width: 95%;
-    max-height: 90vh;
+    padding: 18px 15px;
+    width: 92%;
+    max-height: 78vh;
   }
   .memory-text {
-    font-size: 1rem;
-    padding: 15px 12px;
-    max-height: 70vh;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    max-height: 65vh;
   }
 }
+
 
 
 /* Gallery Modal */
@@ -213,5 +214,6 @@ body {
   .arrow.left { left: -15px; }
   .arrow.right { right: -15px; }
 }
+
 
 
