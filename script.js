@@ -16,16 +16,16 @@ const closeBtn = document.querySelector(".close-btn");
 const leftArrow = document.querySelector(".arrow.left");
 const rightArrow = document.querySelector(".arrow.right");
 
-const heartsContainer = document.getElementById("hearts-container");
+const heartsContainer = document.getElementById("hearts");
 
-// Dummy Memories
+// 🎯 Memories (dummy)
 const memories = {
-  "31-03-2025": { icon: "Eid-Ul-Fitr🌹💖", text: "Your Eid message here...", images:["images/img11.jpeg","images/img12.jpeg","images/img13.jpeg"] },
-  "22-06-2025": { icon: "Snow World❄️", text:"Snow world story...", images:["images/img8.jpeg","images/img9.jpeg","images/img10.jpeg"] },
-  "23-01-2025": { icon: "Ajmer🌹", text:"Ajmer trip story...", images:["images/img15.jpeg","images/img16.jpeg","images/img17.jpeg"] },
-  "18-03-2025": { icon: "Iftar🌸", text:"Iftar story...", images:["images/img19.jpeg","images/img1.jpeg"] },
-  "29-08-2023": { icon: "First Meet-up💖", text:"First meet-up story...", images:["images/img2.jpeg"] },
-  "03-08-2025": { icon: "Manori💖", text:"Manori story...", images:["images/img3.jpeg","images/img4.jpeg","images/img5.jpeg"] }
+  "31-03-2025": { icon:"Eid-Ul-Fitr🌹💖", text:"Your message here...", images:["images/img11.jpeg","images/img12.jpeg","images/img13.jpeg"] },
+  "22-06-2025": { icon:"Snow World❄️", text:"Your message here...", images:["images/img8.jpeg","images/img9.jpeg","images/img10.jpeg"] },
+  "23-01-2025": { icon:"Ajmer🌹", text:"Your message here...", images:["images/img15.jpeg","images/img16.jpeg","images/img17.jpeg"] },
+  "18-03-2025": { icon:"Iftar🌸", text:"Your message here...", images:["images/img19.jpeg","images/img1.jpeg"] },
+  "29-08-2023": { icon:"First Meet-up💖", text:"Your message here...", images:["images/img2.jpeg"] },
+  "03-08-2025": { icon:"Manori💖", text:"Your message here...", images:["images/img3.jpeg","images/img4.jpeg","images/img5.jpeg"] }
 };
 
 let currentImages = [];
@@ -47,12 +47,12 @@ viewBtn.addEventListener("click", () => {
       setTimeout(()=> memorySection.classList.add("active"),50);
     },500);
   } else {
-    errorMsg.textContent = "You missed the date... 😤🎭";
+    errorMsg.textContent = "You missed the date... again. Do you even love me, or was it all a lie?! 😤🎭";
   }
 });
 
 // Back button
-backBtn.addEventListener("click", () => {
+backBtn.addEventListener("click", ()=>{
   memorySection.classList.remove("active");
   setTimeout(()=>{
     memorySection.classList.add("hidden");
@@ -62,32 +62,39 @@ backBtn.addEventListener("click", () => {
 });
 
 // Gallery
-galleryBtn.addEventListener("click", ()=>{ galleryModal.style.display="flex"; showImage(currentIndex); });
+galleryBtn.addEventListener("click", ()=>{
+  galleryModal.style.display="flex";
+  showImage(currentIndex);
+});
 closeBtn.addEventListener("click", ()=>{ galleryModal.style.display="none"; });
-leftArrow.addEventListener("click", ()=>{ currentIndex=(currentIndex-1+currentImages.length)%currentImages.length; showImage(currentIndex); });
-rightArrow.addEventListener("click", ()=>{ currentIndex=(currentIndex+1)%currentImages.length; showImage(currentIndex); });
+leftArrow.addEventListener("click", ()=>{
+  currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+  showImage(currentIndex);
+});
+rightArrow.addEventListener("click", ()=>{
+  currentIndex=(currentIndex+1)%currentImages.length;
+  showImage(currentIndex);
+});
 
-// Show image with transition
+// Image transition
 function showImage(index){
   galleryImage.classList.remove("fade-in");
   galleryImage.classList.add("fade-out");
   setTimeout(()=>{
-    galleryImage.src = currentImages[index];
+    galleryImage.src=currentImages[index];
     galleryImage.classList.remove("fade-out");
     galleryImage.classList.add("fade-in");
-  },200);
+  },300);
 }
 
-// Hearts animation
+// Floating hearts
 function createHeart(){
   const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.textContent = "❤️"; // Add the heart emoji
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = 12 + Math.random() * 18 + "px";
+  heart.className="heart";
+  heart.textContent="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=12+Math.random()*18+"px";
   heartsContainer.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
+  setTimeout(()=> heart.remove(),6000);
 }
-setInterval(createHeart, 500);
-
-
+setInterval(createHeart,500);
