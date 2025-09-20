@@ -82,9 +82,12 @@ function showImage(index){
 function createHeart(){
   const heart = document.createElement("div");
   heart.classList.add("heart");
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.fontSize = 12 + Math.random()*18 + "px";
+  heart.textContent = "❤️"; // Add the heart emoji
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = 12 + Math.random() * 18 + "px";
   heartsContainer.appendChild(heart);
-  setTimeout(()=> heart.remove(),6000);
+  setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 500);
+
+
