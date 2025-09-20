@@ -60,38 +60,38 @@ body {
 .secondary { background: #607d8b; }
 .secondary:hover { background: #546e7a; }
 
-//* Memory Section */
+/* Memory Section */
 .memory-card {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(12px);
-  padding: 25px 30px; /* increased padding */
-  border-radius: 20px; /* slightly bigger radius */
-  max-width: 550px;
-  width: 90%;
-  max-height: 80vh;
+  padding: 30px 25px; /* more padding */
+  border-radius: 20px;
+  max-width: 600px;  /* wider for larger screens */
+  width: 95%;        /* responsive width */
+  max-height: 85vh;  /* more height */
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   text-align: center;
-  overflow: hidden; /* hide overflow outside card */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 /* Memory text */
 .memory-text {
-  max-height: 60vh; /* more space */
+  max-height: 65vh; /* more vertical space */
   overflow-y: auto;
   text-align: left;
-  padding: 15px 12px; /* extra padding */
-  line-height: 1.8; /* more spacing between lines */
-  font-size: 1.05rem; /* slightly bigger text */
-  background: rgba(255,255,255,0.15);
-  border-radius: 12px;
+  padding: 18px 15px; /* more padding inside text box */
+  line-height: 1.9;   /* better readability */
+  font-size: 1.1rem;  /* slightly larger text */
+  background: rgba(255,255,255,0.18);
+  border-radius: 15px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255,64,129,0.6) transparent;
 }
 
-/* Optional: scrollbar styling for Chrome */
+/* Scrollbar for Chrome/Edge/Safari */
 .memory-text::-webkit-scrollbar {
   width: 8px;
 }
@@ -101,6 +101,20 @@ body {
 }
 .memory-text::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+  .memory-card {
+    padding: 20px 15px;
+    width: 95%;
+    max-height: 90vh;
+  }
+  .memory-text {
+    font-size: 1rem;
+    padding: 15px 12px;
+    max-height: 70vh;
+  }
 }
 
 
@@ -199,4 +213,5 @@ body {
   .arrow.left { left: -15px; }
   .arrow.right { right: -15px; }
 }
+
 
